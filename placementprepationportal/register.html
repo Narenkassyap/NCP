@@ -1,0 +1,103 @@
+<html>
+<link rel="stylesheet" type="text/css" href="login.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="styling.css">
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["uname"].value;
+  var y = document.forms["myForm"]["pass"].value;
+  var z = document.forms["myForm"]["name"].value;
+  var a = document.forms["myForm"]["rollnumber"].value;
+   if (x == "" || x == null) {
+    document.getElementById('errorname').innerHTML="This is an invalid name";  
+	return false;// confirm // prompt
+  }
+	var letters = /^[0-9a-zA-Z]+$/;
+    if(x.match(letters))
+    {
+    }
+    else
+    {
+   document.getElementById('errorname').innerHTML="Please input alphanumeric characters only";
+    return false;
+    }
+  document.getElementById('errorname').innerHTML="";  
+    if (z == "" || z == null) {
+    document.getElementById('errorname2').innerHTML="This is Error In Name"; 
+	return false;// confirm // prompt
+  }
+  document.getElementById('errorname2').innerHTML=""; 
+    if (a == "" || a == null) {
+    document.getElementById('errorname3').innerHTML="This is Error In RollNumber"; 
+	return false;// confirm // prompt
+  }
+  document.getElementById('errorname3').innerHTML=""; 
+  if (y == "" || y == null) {
+    document.getElementById('errorname4').innerHTML="This is an invalid password"; 
+	return false;// confirm // prompt
+  }
+  document.getElementById('errorname4').innerHTML=""; 
+  
+}
+function reset(){
+	document.getElementById('myform').reset();
+}
+</script>
+<body>
+<div class="header">
+  <a class="logo">Placement Prep.</a>
+  <div class="header-right">
+    <a class="active" >Home</a>
+    <!-- <a  href="#practice">Practice</a>
+    <a  href="#quiz_home">Test</a>
+    <a href="#about">Discussion</a> -->
+    <a href="https://www.amrita.edu/contact/management">Contact</a>
+    <a href="https://www.amrita.edu/about">About</a>
+    <a href="./login.html" ><span class="glyphicon glyphicon-log-out"></span>Login</a>
+  </div>
+</div>
+<div class="sidenav">
+         <div class="login-main-text">
+            <img src="https://upload.wikimedia.org/wikipedia/en/f/f8/Amrita-vishwa-vidyapeetham-color-logo.png"/>
+         </div>
+      </div>
+      <div class="main">
+	  <marquee width="100%" behavior="slide">  
+		<h1>Welcome to Placement Preparation Portal</h1>
+			</marquee>
+         <div class="col-md-6 col-sm-12">
+            <div class="login-form">
+               <form name="myForm" onsubmit="return validateForm()" action="./login.html" method="post">
+                  <div class="form-group">
+                     <label>User Name</label>
+                     <input type="text" class="form-control" name="uname" placeholder="User Name">
+					 <span class="errorhandling" id="errorname"></span>
+                  </div>
+				  <div class="form-group">
+                     <label>Name</label>
+                     <input type="text" class="form-control" name="name" placeholder="Full Name">
+					 <span class="errorhandling" id="errorname2"></span>
+                  </div>
+				  <div class="form-group">
+                     <label>Roll Number</label>
+                     <input type="text" class="form-control" name="rollnumber" placeholder="Roll Number Eg: CB.EN.U4CSE172XX">
+					 <span class="errorhandling" id="errorname3"></span>
+                  </div>
+                  <div class="form-group">
+                     <label>Password</label>
+                     <input type="password" class="form-control" name="pass" placeholder="Password">
+					 <span class="errorhandling" id="errorname4"></span>
+                  </div>
+                  <button type="submit" class="btn btn-black">Register</button>
+               </form>
+            </div>
+         </div>
+      </div>
+	  </body>
+	  </html>
